@@ -6,9 +6,17 @@
   "license": "ISC",
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest --passWithNoTests --no-cache --maxWorkers=50%",
+    "test:verbose": "npm run test -- --verbose",
+    "test:watch": "npm t -- --watch",
+    "test:staged": "npm t -- --findRelatedTests",
+    "test:coverage": "npm run test -- --coverage",
+    "test:integration": "npm t -- -c ./jest.integration.config.js",
+    "test:external": "npm run test -- -c ./jest.integration.config.js"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.1",
     "@types/node": "^20.2.3",
     "@typescript-eslint/eslint-plugin": "^5.59.7",
     "@typescript-eslint/parser": "^5.59.7",
