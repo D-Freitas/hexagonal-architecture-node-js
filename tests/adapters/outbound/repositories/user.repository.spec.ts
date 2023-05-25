@@ -1,4 +1,4 @@
-import { UserRepository } from "@/infrastructure/repositories"
+import { UserRepository } from "@/adapters/outbound/repositories"
 
 describe('UserRepository', () => {
   it('should save user data to a txt file', async () => {
