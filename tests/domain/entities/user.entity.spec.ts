@@ -6,7 +6,7 @@ describe('UserEntity', () => {
     expect(sut).toEqual({
       firstName: 'Davi',
       lastName: 'Freitas',
-      username: 'davi_freitas',
+      userName: 'davi_freitas',
       age: 21
     })
   })

@@ -6,7 +6,9 @@ import { RequestHandler } from 'express'
 type Adapter = (controller: Controller<CreateUserRequest>) => RequestHandler
 
 export const adaptExpressRoute: Adapter = controller => async (req, res) => {
-  const { statusCode, data } = await controller.execute({ ...req.body })
+  const requestData = req.body as { firstName: string, lastName: string, userName: string, age: number }
+  const request = new CreateUserRequest(requestData.firstName, requestData.lastName, requestData.userName, requestData.age)
+  const { statusCode, data } = await controller.execute(request)
   const json = [200, 204].includes(statusCode) ? data : { error: 'Something went wrong.' }
   res.status(statusCode).json(json)
 }

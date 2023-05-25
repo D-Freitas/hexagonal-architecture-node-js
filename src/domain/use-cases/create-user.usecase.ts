@@ -11,10 +11,10 @@ export class CreateUserUseCase implements CreateUserUseCasePort {
     const output = await this.userRepository.save({
       firstName: user.firstName,
       lastName: user.lastName,
-      username: user.username,
+      userName: user.userName,
       age: user.age
     })
-    const userData = new User(output.firstName, output.lastName, output.username, output.age)
+    const userData = new User(output.firstName, output.lastName, output.userName, output.age)
     return userData
   }
 }

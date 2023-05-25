@@ -8,7 +8,7 @@ describe('CreateUserUseCase', () => {
       return {
         firstName: input.firstName,
         lastName: input.lastName,
-        username: input.username,
+        userName: input.userName,
         age: input.age
       }
     }
@@ -25,7 +25,7 @@ describe('CreateUserUseCase', () => {
     expect(await sut.execute(user)).toEqual({
       firstName: 'Davi',
       lastName: 'Freitas',
-      username: 'davi_freitas',
+      userName: 'davi_freitas',
       age: 21
     })
   })
