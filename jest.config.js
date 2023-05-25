@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
     '!<rootDir>/src/newsletter/**',
