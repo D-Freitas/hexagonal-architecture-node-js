@@ -6,6 +6,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.2.3",
+    "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
   }
 }
