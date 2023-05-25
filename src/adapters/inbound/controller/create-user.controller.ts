@@ -4,7 +4,7 @@ import { UserResponse } from '@/adapters/inbound/controller/response'
 import { HttpResponse, ok } from  '@/adapters/inbound/controller/response/helpers'
 import { Controller } from '@/adapters/inbound/controller'
 
-export class UserController implements Controller<CreateUserRequest> {
+export class CreateUserController implements Controller<CreateUserRequest> {
   constructor (
     private readonly createUserUseCase: CreateUserUseCasePort
   ) {}
