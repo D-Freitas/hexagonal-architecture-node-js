@@ -24,6 +24,6 @@ describe('UserController', () => {
     const request = new CreateUserRequest('Davi', 'Freitas', 'davi_freitas', 21)
     const response = ok(UserResponse.fromDomain(user))
     
-    expect(await sut.createUser(request)).toEqual(response)
+    expect(await sut.execute(request)).toEqual(response)
   })
 })
