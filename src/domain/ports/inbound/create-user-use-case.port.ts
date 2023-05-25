@@ -1,5 +1,5 @@
-import { User } from "@/domain/entities"
+import { User } from '@/domain/entities'
 
 export interface CreateUserUseCasePort {
-  execute: (user: User) => User
+  execute: (user: User) => Promise<User>
 }
