@@ -1,0 +1,7 @@
+{
+  "name": "hexagonal-architecture",
+  "version": "1.0.0",
+  "main": "main/main.ts",
+  "author": "Davi Freitas",
+  "license": "ISC"
+}
