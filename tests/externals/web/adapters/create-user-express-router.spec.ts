@@ -64,4 +64,18 @@ describe('CreateUserExpressRouter', () => {
     expect(res.json).toHaveBeenCalledWith(null)
     expect(res.json).toHaveBeenCalledTimes(1)
   })
+
+  it('should respond with 400 and valid error', async () => {
+    controller.execute.mockResolvedValueOnce({
+      statusCode: 400,
+      data: new Error('any_error')
+    })
+
+    await sut(req, res, next)
+
+    expect(res.status).toHaveBeenCalledWith(400)
+    expect(res.status).toHaveBeenCalledTimes(1)
+    expect(res.json).toHaveBeenCalledWith({ error: 'Something went wrong.' })
+    expect(res.json).toHaveBeenCalledTimes(1)
+  })
 })
