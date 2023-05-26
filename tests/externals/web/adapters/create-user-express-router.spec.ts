@@ -41,4 +41,13 @@ describe('CreateUserExpressRouter', () => {
     
     expect(controller.execute).toHaveBeenCalledWith({})
   })
+
+  it('should respond with 200 and valid data', async () => {
+    await sut(req, res, next)
+
+    expect(res.status).toHaveBeenCalledWith(200)
+    expect(res.status).toHaveBeenCalledTimes(1)
+    expect(res.json).toHaveBeenCalledWith({ data: 'any_data' })
+    expect(res.json).toHaveBeenCalledTimes(1)
+  })
 })
