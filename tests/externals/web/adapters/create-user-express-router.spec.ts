@@ -33,4 +33,12 @@ describe('CreateUserExpressRouter', () => {
     expect(controller.execute).toHaveBeenCalledWith({ firstName: 'any_first_name', lastName: 'any_last_name', userName: 'any_user_name', age: '21' })
     expect(controller.execute).toHaveBeenCalledTimes(1)
   })
+
+  it('should call execute with empty request', async () => {
+    const req = getMockReq()
+
+    await sut(req, res, next)
+    
+    expect(controller.execute).toHaveBeenCalledWith({})
+  })
 })
