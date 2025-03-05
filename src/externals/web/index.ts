@@ -5,5 +5,5 @@ import 'reflect-metadata'
 
 (async () => {
   const { app } = await import('@/externals/web/config/app')
-  app.listen(env.port, () => console.log(`Server running at http://localhost:${env.port}`))
+  app.listen(env, () => console.log(`Server running at http://localhost:${env}`))
 })()

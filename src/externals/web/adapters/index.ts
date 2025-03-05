@@ -1,1 +1,1 @@
-export * from './create-user-express-router'
+export * from './adapt-express-router'

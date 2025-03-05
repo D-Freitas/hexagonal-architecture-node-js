@@ -1,7 +1,9 @@
+import { LoginDTO } from '@/adapters/inbound/dtos'
 import { Controller, CreateUserController } from '@/adapters/inbound/controller'
-import { CreateUserRequest } from '@/adapters/inbound/controller/request'
-import { makeCreateUserUseCase } from '@/externals/web/factories/domain/use-cases'
+import { makeCreateUserUseCase } from '@/externals/web/factories/adapters/inbound/use-cases'
 
-export const makeCreateUserController = (): Controller<CreateUserRequest> => {
-  return new CreateUserController(makeCreateUserUseCase())
+export const makeCreateUserController = (): Controller<LoginDTO> => {
+  return new CreateUserController(
+    makeCreateUserUseCase()
+  )
 }
